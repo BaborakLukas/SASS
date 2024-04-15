@@ -1,0 +1,69 @@
+// Definice proměnných
+$primary-color: #3498db;
+$secondary-color: #2ecc71;
+$font-family: 'Arial', sans-serif;
+
+// Definice modulu pro záhlaví
+@mixin header-style {
+    background-color: $primary-color;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+// Definice modulu pro sekce
+@mixin section-style {
+    margin: 20px 0;
+    padding: 20px;
+    border: 1px solid $secondary-color;
+    border-radius: 5px;
+}
+
+// Definice modulu pro odstavce
+@mixin paragraph-style {
+    font-family: $font-family;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+// Definice modulu pro odrážky
+@mixin list-style {
+    font-family: $font-family;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+// Definice modulu pro patičku
+@mixin footer-style {
+    background-color: $secondary-color;
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+
+// Použití modulů
+header {
+    @include header-style;
+}
+
+main {
+    section {
+        @include section-style;
+
+        h2 {
+            color: $primary-color;
+        }
+
+        p {
+            @include paragraph-style;
+        }
+
+        ul {
+            @include list-style;
+        }
+    }
+}
+
+footer {
+    @include footer-style;
+}
